@@ -1,0 +1,77 @@
+.align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 12px;
+    padding: 8px;
+    width: 14rem;
+}
+
+input[type="password"i] {
+    margin-top: 6px;
+}
+
+.btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-div .login-btn {
+    width: 15rem;
+    padding: 6px;
+    font-size: 14px;
+    background: orange;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.wrap-login100 {
+    width: 500px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
+}
+
+.container-login100 {
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+}

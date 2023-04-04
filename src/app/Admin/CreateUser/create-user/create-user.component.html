@@ -1,0 +1,49 @@
+<div class="container-login100">
+    <div class="userForm">
+        <div class="listBtn"><button mat-raised-button (click)="goToList()">Show All users</button> </div>
+        <form #myForm="ngForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Name<small style="color:red">*</small></label>
+                <input type="text" class="form-control" name="fullname" ngModel #fullname="ngModel" required>
+                <small *ngIf="fullname.errors?.['required'] && (fullname.touched || fullname.dirty)" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+            </div>
+            <div class="form-group">
+                <label>Email<small style="color:red">*</small></label>
+                <input type="email" class="form-control" name="email" ngModel #emailid="ngModel"
+                    [pattern]="emailValidator" required email>
+                <small *ngIf="emailid.errors?.['required'] && emailid.touched" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+                <small *ngIf="emailid.errors?.['pattern']" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Invalid Email</small>
+            </div>
+            <div class="form-group">
+                <label>Phone<small style="color:red">*</small></label>
+                <input type="text" class="form-control" name="phone" ngModel required #phone="ngModel"
+                    [pattern]="phoneValidator" required>
+                <small *ngIf="phone.errors?.['required'] && phone.touched" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+                <small *ngIf="phone.errors?.['pattern'] && phone.dirty" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Invalid Phone number</small>
+            </div>
+            <div class="form-group">
+                <label>Password<small style="color:red">*</small></label>
+                <input type="password" class="form-control" name="password" ngModel required #password="ngModel">
+                <small *ngIf="password.errors?.['required'] && password.touched" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+            </div>
+            <div class="form-group">
+                <label>Join Date<small style="color:red">*</small></label>
+                <input type="date" class="form-control" name="joindate" ngModel required #joindate="ngModel"
+                    [max]="today">
+                <small *ngIf="joindate.errors?.['required'] && joindate.touched" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+            </div>
+            <div class="submit form-group">
+                <button class="btn btn-success btn-block" (click)="saveUser(myForm)">Submit</button>
+                <button class="btn btn-danger btn-block" style="margin-left: 10px;"
+                    (click)="clearForm(myForm)">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>

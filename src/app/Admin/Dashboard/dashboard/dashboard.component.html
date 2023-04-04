@@ -1,0 +1,31 @@
+<button class="createUserBtn" mat-flat-button color="primary" (click)="toCreateUser()">Create User</button>
+<div class="totalEmp">
+    <p>In Probation Period:&nbsp;{{totalunpaid}}</p>
+    <p> Not in Probation Period:&nbsp;{{totalpaid}}</p>
+</div>
+<div class="list">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Sr No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Join Date</th>
+                <th scope="col">Paid leave</th>
+                <th scope="col">Unpaid leave</th>
+                <th scope="col">Leave balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of list;index as i">
+                <td scope="row">{{i + 1}}</td>
+                <td scope="row">{{element.name}}</td>
+                <td scope="row">{{element.phone}}</td>
+                <td scope="row">{{element.joinDate}}</td>
+                <td scope="row">{{element.paid}}</td>
+                <td scope="row">{{element.unpaid}}</td>
+                <td scope="row">{{element.leaveBalance}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

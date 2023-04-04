@@ -1,0 +1,29 @@
+<div class="container-login100">
+    <button class="createUserBtn" mat-flat-button color="primary" (click)="takeLeave()">Take leave</button>
+    <!-- <div class="userForm">
+    </div> -->
+    <div class="list">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Join Date</th>
+                    <th scope="col">Paid leave</th>
+                    <th scope="col">Unpaid leave</th>
+                    <th scope="col">Leave balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                <td scope="row">{{userdata.name}}</td>
+                <td scope="row">{{userdata.phone}}</td>
+                <td scope="row">{{userdata.joinDate}}</td>
+                <td scope="row">{{userdata.paid}}</td>
+                <td scope="row">{{userdata.unpaid}}</td>
+                <td scope="row">{{userdata.leaveBalance}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

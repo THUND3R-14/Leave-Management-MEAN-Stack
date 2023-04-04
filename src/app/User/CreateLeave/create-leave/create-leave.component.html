@@ -1,0 +1,27 @@
+<div class="userForm">
+    <form #myForm="ngForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>Start Date<small style="color:red">*</small></label>
+            <input type="date" class="form-control" name="startdate" ngModel required #startdate="ngModel"
+                [min]="today">
+            <small *ngIf="startdate.errors?.['required'] && startdate.touched" class="alert"
+                style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+        </div>
+        <div class="form-group">
+            <label>End Date<small style="color:red">*</small></label>
+            <input type="date" class="form-control" name="enddate" ngModel required #enddate="ngModel"
+                [min]="startdate.value">
+            <small *ngIf="enddate.errors?.['required'] && enddate.touched" class="alert"
+                style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+        </div>
+        <div class="form-group">
+            <label>Reason<small style="color:red">*</small></label>
+            <textarea class="form-control" name="leaveReason" ngModel required #reason="ngModel"></textarea>
+            <small *ngIf="reason.errors?.['required'] && reason.touched" class="alert"
+                style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+        </div>
+        <div class="submit form-group">
+            <button class="btn btn-success btn-block" (click)="createLeave(myForm)">Submit</button>
+        </div>
+    </form>
+</div>

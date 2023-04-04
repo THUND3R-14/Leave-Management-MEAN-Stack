@@ -1,0 +1,24 @@
+<div class="container-login100">
+    <div class="wrap-login100">
+        <div class="align-center">
+            <h2>Login</h2>
+            <form #loginForm="ngForm">
+                <input placeholder="Email Id" type="text" name="email" ngModel #emailid="ngModel"
+                    [pattern]="emailPattern" required />
+                <small *ngIf="emailid.errors?.['required'] && emailid.touched" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Required*</small>
+                <small *ngIf="emailid.errors?.['pattern']" class="alert"
+                    style="color: rgb(247, 96, 96); margin-left: 10px;">Invalid Email</small>
+
+                <input placeholder="Password" type="password" name="password" ngModel #password="ngModel" required>
+                <small *ngIf="password.errors?.['required'] && password.touched" class="alert"
+                    style="color: red; margin-left: 10px;">Required*</small>
+                <div class="btn-div">
+                    <button class="login-btn" (click)="checkUser(loginForm)">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
