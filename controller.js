@@ -4,7 +4,7 @@ const model = require("./schemas");
 const bcrypt = require("bcrypt");
 const { hash } = require("bcrypt");
 const API_KEY =
-  "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";
+  "";
 // const multer = require('multer');
 // const path = require('path');
 // app.use(express.static('uploads'))
